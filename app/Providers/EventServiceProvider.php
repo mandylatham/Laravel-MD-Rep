@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,19 +15,15 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Illuminate\Auth\Events\Registered' => [
-            'Illuminate\Auth\Listeners\SendEmailVerificationNotification'
+        Registered::class => [
+            SendEmailVerificationNotification::class,
         ],
-        'Illuminate\Auth\Events\Verified' => [
-            'App\Listeners\LogVerifiedUser',
-        ],
-        // Office Events.
-        'App\Events\Office\Staff\InviteUser' => [
-            'App\Listeners\Office\Staff\SendStaffInvite'
-        ],
-        'App\Events\Office\Subscription\EventSubscriptionCreated' => [
-            'App\Listeners\Office\Subscription\OfficeSubscriptionCreated'
-        ]
+        'App\Events\LoginEvent' => ['App\Listeners\LoginListener'],
+        'App\Events\ActivityEvent' => ['App\Listeners\ActivityListener'],
+        'App\Events\EventCreationEvent' => ['App\Listeners\EventCreationListener'],
+        'App\Events\EventCancelledEvent' => ['App\Listeners\EventCancelledListener'],
+        'App\Events\EventActiveEvent' => ['App\Listeners\EventActiveListener'],
+        'App\Events\NewChatEvent' => ['App\Listeners\NewChatListener'],
     ];
 
     /**
@@ -35,6 +33,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        parent::boot();
+
         //
     }
 }
