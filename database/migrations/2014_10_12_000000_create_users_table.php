@@ -1,11 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use App\Models\System\User;
+use Illuminate\Support\Facades\DB;
 
 class CreateUsersTable extends Migration
 {
@@ -17,56 +15,39 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-
-            // General
-            $table->bigIncrements('id');
-            $table->uuid('uuid')->unique();
+            $table->increments('id');
+            $table->string('name');
             $table->string('email')->unique();
-            $table->string('username', 25)->unique();
+            $table->string('tel_code');
+            $table->string('phone')->default("");
             $table->string('password');
-            $table->string('company', 50)->nullable();
-            $table->string('first_name', 50)->nullable();
-            $table->string('last_name', 50)->nullable();
-            $table->string('address', 100)->nullable();
-            $table->string('address_2', 100)->nullable();
-            $table->string('city', 50)->nullable();
-            $table->string('state', 50)->nullable();
-            $table->string('zipcode', 25)->nullable();
-            $table->string('country', 2)->nullable();
-            $table->string('phone', 16)->nullable();
-            $table->string('mobile_phone', 16)->nullable();
-
-            // Metafields
-            $table->schemalessAttributes('meta_fields')->nullable();
-
-            // Card Details
-            $table->string('stripe_id')->nullable()->index()->collation('utf8mb4_bin');
-            $table->string('payment_method')->nullable()->collation('utf8mb4_bin');
-            $table->string('card_brand', 25)->nullable();
-            $table->string('card_full_name', 100)->nullable();
-            $table->string('card_country', 4)->nullable();
-            $table->string('card_funding', 25)->nullable();
-            $table->unsignedSmallInteger('card_last_four')->nullable();
-            $table->unsignedSmallInteger('card_exp_month')->nullable();
-            $table->unsignedSmallInteger('card_exp_year')->nullable();
-
-            // Timestamp & Other
-            $table->string('notifications')->nullable();
-            $table->string('status', 25)->default(User::INACTIVE);
-            $table->string('setup_completed', 25)->nullable();
-            $table->string('terms', 10)->default(User::TERMS_DECLINED);
-            $table->string('marketing', 10)->default(User::MARKETING_DECLINED);
-            $table->string('user_agent', 1000)->nullable();
-            $table->string('invite_code', 40)->nullable();
-            $table->rememberToken();
-            $table->ipAddress('ip_address')->nullable();
-            $table->timestamp('trial_ends_at')->nullable();
+            $table->string('token')->nullable();
+            $table->string('bio')->default("");
+            $table->unsignedInteger('gender')->default(0);
+            $table->unsignedInteger('country')->nullable();
+            $table->text('profile_pic')->nullable();
+            $table->tinyInteger('active')->default(0);
+            $table->decimal('lat', 10, 8)->default(0);
+            $table->decimal('lng', 11, 8)->default(0);
+            $table->tinyInteger('email_verified')->default(0);
+            $table->tinyInteger('mobile_verified')->default(0);
             $table->timestamp('email_verified_at')->nullable();
-            $table->timestamp('last_login_at')->nullable();
-            $table->timestamp('last_activity_at')->nullable();
-            $table->timestamps();
+            $table->timestamp('mobile_verified_at')->nullable();
+            $table->timestamp('blocked_at')->nullable();
+            $table->unsignedInteger('created_by');
+            $table->unsignedInteger('updated_by');
+            $table->rememberToken();
             $table->softDeletes();
+            $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('country')->references('id')->on('countries');
+        });
+       /* Schema::table('users', function (Blueprint $table) {
+            $table->foreign('gender')->references('id')->on('genders');
+        });*/
+        DB::statement("ALTER TABLE users ADD FULLTEXT full(name)");
     }
 
     /**
@@ -76,6 +57,10 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+    	Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['country']);
+            //$table->dropForeign(['gender']);
+        });
         Schema::dropIfExists('users');
     }
 }
