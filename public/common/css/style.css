@@ -1,0 +1,51 @@
+label.error {
+    white-space: normal;
+}
+
+.custom-select {
+    min-width: 60px;
+}
+
+.form-group-default.active {
+    border-color: #1572e8 !important;
+    background-color: #ffffff;
+}
+
+.form-group-default.error-cont {
+    border-color: #F25961 !important;
+}
+
+.form-group-default.active label:not(.error) {
+    color: #1572e8!important;
+    opacity: 1 !important;
+}
+
+.editable-input .form-control {
+    padding: 0.3rem 1rem;
+}
+
+.table.dataTable {
+    border-spacing: 1px;
+}
+
+.table.dataTable thead th {
+    height: 50px;
+}
+
+.form-group-password .show-password {
+    position: absolute;
+    right: 24px;
+    top: 54%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.bg-white {
+    background: #FFF !important;
+}
+
+.select2-container--bootstrap .select2-results__group {
+    color: #3a3a3a;
+    background: #b3b3b3;
+}
