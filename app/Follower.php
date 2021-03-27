@@ -7,8 +7,12 @@ declare(strict_types=1);
  * Custom Helpers Functions.
  * Custom Helpers Functions.
  * Custom Helpers Functions.
+ * Custom Helpers Functions.
+ * Custom Helpers Functions.
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright MdRepTime, LLC
+ * @copyright MdRepTime, LLC
  * @copyright MdRepTime, LLC
  */
 
