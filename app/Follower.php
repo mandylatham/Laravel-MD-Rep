@@ -145,10 +145,14 @@ if (! function_exists('safe_double')) {
             throw new \InvalidArgumentException('Invaild double value.');
         }
 
+
+
         return $value;
     }
 }
 
+/**
+/**
 /**
  * Digits only
  *
