@@ -154,10 +154,14 @@ if (! function_exists('safe_double')) {
 /**
 /**
 /**
+/**
+/**
  * Digits only
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
+ *
+ *
  *
  * @param  string $digits
  * @return int
