@@ -477,201 +477,34 @@ if (! function_exists('years')) {
     }
 }
 
+
 /**
- * Gets currently available site lanauges
+ * Returns a currency by code
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
- * @todo   Add more langauges.
- * @return array
- */
-if (! function_exists('site_languages')) {
-
-    function site_languages($cache = false): array
-    {
-        return [
-            'en' => 'English'
-        ];
-    }
-}
-
-/**
- * Returns url to storage resource
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @return string|null
- */
-if (! function_exists('storage_url')) {
-    function storage_url($path, $disk = 'local'): ?string
-    {
-        if (filled($path) && Storage::disk($disk)->exists($path)) {
-            return Storage::disk($disk)->url($path);
-        }
-    }
-}
-
-/**
- * Returns all the countries from database or cache.
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
+ * @param  string $code
  * @param  bool $cached
- * @return \Illuminate\Support\Collection returns a collection from database
+ * @return App\Models\System\Currency
  */
-if (! function_exists('countries')) {
-    function countries(bool $cached = false): ?Collection
+if (! function_exists('currency')) {
+    function currency(string $code = 'USD', bool $cached = false): ?Currency
     {
-        if ($cached == true) {
-            $countries = Cache::rememberForever(
-                'countries',
-                function () {
-
-                    $columns = [
-                    'id',
-                    'code',
-                    'name',
-                    'status'
-                    ];
-
-                    return Country::where('status', 'active')
-                        ->select($columns)
-                        ->orderBy('name', 'asc')
-                        ->get();
-                }
-            );
-        } else {
-            $columns = [
-                'id',
-                'code',
-                'name',
-                'status'
-            ];
-
-            $countries = Country::where('status', 'active')
-                ->select($columns)
-                ->orderBy('name', 'asc')
-                ->get();
-        }
-
-        return $countries;
-    }
-}
-
-/**
- * Returns country full name from database.
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @param  string $code country code
- * @param  bool $cached
- * @return string returns full country name.
- */
-if (! function_exists('country')) {
-    function country(string $code = '', $cached = false): string
-    {
-        $country = false;
-
         if (filled($code)) {
-            $countries = countries($cached);
+            $code = strtoupper($code);
+            $currencies = currencies($cached);
 
-            foreach ($countries as $_country) {
-                if ($_country->code == $code) {
-                    $country = $_country;
+            foreach ($currencies as $currency) {
+                if ($currency->code == $code) {
+                    return $currency;
                 }
             }
         }
 
-        return $country ? $country->name : $code;
+        return null;
     }
 }
-
-/**
- * Returns all the timezones from database or cache.
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @param  bool $cached
- * @return Illuminate\Support\Collection returns a collection of timezones
- */
-if (! function_exists('timezones')) {
-    function timezones(bool $cached = false): ?Collection
-    {
-        if ($cached === true) {
-            return Cache::rememberForever(
-                'timezones',
-                function () {
-
-                    $columns = [
-                    'zone',
-                    'status'
-                    ];
-
-                    return TimeZone::select($columns)->orderBy('zone')->get();
-                }
-            );
-        } else {
-            $columns = [
-                'zone',
-                'status'
-            ];
-
-            return TimeZone::select($columns)->orderBy('zone')->get();
-        }
-    }
-}
-
-/**
- * Returns all currencies from database or cache
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @param  bool $cached
- * @return Illuminate\Support\Collection returns a collection of currencies
- */
-if (! function_exists('currencies')) {
-    function currencies(bool $cached = false): ?Collection
-    {
-        if ($cached === true) {
-            return Cache::rememberForever(
-                'currencies',
-                function () {
-
-                    $columns = [
-                    'code',
-                    'symbol',
-                    'name',
-                    'name_plural',
-                    'symbol_native',
-                    'decimal_digits',
-                    'status'
-                    ];
-
-                    return Currency::select($columns)->orderBy('name')->get();
-                }
-            );
-        } else {
-            $columns = [
-                'code',
-                'symbol',
-                'name',
-                'name_plural',
-                'symbol_native',
-                'decimal_digits',
-                'status'
-            ];
-
-            return Currency::select($columns)->orderBy('name')->get();
-        }
-    }
-}
-
 /**
  * Returns a currency by code
  *
