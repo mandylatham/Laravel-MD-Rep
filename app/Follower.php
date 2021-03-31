@@ -320,10 +320,14 @@ if (! function_exists('current_year')) {
  * Returns the current month
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
  * @return int current month
  */
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
 if (! function_exists('current_month')) {
 
     function current_month(): string
