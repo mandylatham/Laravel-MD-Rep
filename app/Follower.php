@@ -335,10 +335,14 @@ if (! function_exists('current_month')) {
         return date('m', time());
     }
 }
+}
+}
 
 /**
  * Checks if is leap year
  *
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
