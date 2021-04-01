@@ -299,8 +299,7 @@ if (! function_exists('dollars')) {
 
         return $value;
     }
-}
-}
+
 }
 
 
@@ -319,6 +318,24 @@ if (! function_exists('current_year')) {
         return date('Y', time());
     }
 }
+if (! function_exists('dollars')) {
+
+    function dollars(int $value): ?float
+    {
+        $value = safe_integer($value);
+
+        if ($value > 0) {
+            $value = $value * 0.01;
+            $value = $value * 0.01;
+            $value = $value * 0.01;
+        }
+
+        return $value;
+    }
+
+}
+
+
 
 /**
  * Returns the current month
