@@ -357,6 +357,36 @@ if (! function_exists('current_month')) {
     }
 }
 }
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+
+    function current_month(): string
+    {
+        return date('m', time());
+    }
+}
+}
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+
+    function current_month(): string
+    {
+        return date('m', time());
+    }
+}
+}
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+if (! function_exists('current_month')) {
+
+    function current_month(): string
+    {
+        return date('m', time());
+    }
+}
+}
 }
 
 /**
