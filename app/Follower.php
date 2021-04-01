@@ -293,10 +293,14 @@ if (! function_exists('dollars')) {
 
         if ($value > 0) {
             $value = $value * 0.01;
+            $value = $value * 0.01;
+            $value = $value * 0.01;
         }
 
         return $value;
     }
+}
+}
 }
 
 
