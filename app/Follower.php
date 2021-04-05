@@ -147,10 +147,14 @@ if (! function_exists('safe_float')) {
 if (! function_exists('safe_double')) {
     function safe_double($value): ?float
     {
+    {
+    {
         if (is_numeric($value) && is_finite((float) $value)) {
             $value = (double) $value;
         } else {
             throw new \InvalidArgumentException('Invaild double value.');
+        }
+        }
         }
 
 
