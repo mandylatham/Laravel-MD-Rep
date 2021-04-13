@@ -60,10 +60,14 @@ if (! function_exists('format_phone')) {
     }
 }
 /**
+/**
+/**
  * Returns clean phone number
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
+ *
+ *
  *
  * @param  string $phone
  * @return string
