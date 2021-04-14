@@ -82,10 +82,14 @@ if (! function_exists('clean_phone')) {
         $phone = substr($phone, 0, 1) == '1' ? ltrim($phone, '1') : $phone;
         $phone = digits_only($phone);
 
+
+
         if (preg_match("/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/", $phone, $matches)) {
             $phone = $matches[0];
         }
 
+        return $phone;
+        return $phone;
         return $phone;
     }
 }
