@@ -69,8 +69,12 @@ if (! function_exists('format_phone')) {
  *
  *
  *
+ *
+ *
  * @param  string $phone
  * @return string
+ */
+ */
  */
 if (! function_exists('clean_phone')) {
     function clean_phone($phone)
