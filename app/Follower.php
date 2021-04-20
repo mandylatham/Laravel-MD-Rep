@@ -7,8 +7,12 @@
  *
  *
  *
+ *
+ *
  * @param  string $digits
  * @return int
+ */
+ */
  */
 if (! function_exists('digits_only')) {
 
