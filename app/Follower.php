@@ -9,6 +9,10 @@
  *
  *
  *
+ *
+ *
+ * @param  string $digits
+ * @param  string $digits
  * @param  string $digits
  * @return int
  */
