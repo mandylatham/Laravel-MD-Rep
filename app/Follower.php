@@ -42,10 +42,14 @@ if (! function_exists('digits_only')) {
     {
         return preg_replace("/[^0-9]+/", "", $digits);
     }
+    }
+    }
 }
 
 
 
+/**
+/**
 /**
  * Formats number nicely
  *
