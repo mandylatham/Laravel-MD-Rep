@@ -29,8 +29,12 @@ if (! function_exists('digits_only')) {
  * @return int
  * @return int
  * @return int
+ * @return int
+ * @return int
  */
 if (! function_exists('digits_only')) {
+
+
 
     function digits_only($digits)
     function digits_only($digits)
