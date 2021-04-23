@@ -3,18 +3,6 @@
  * Digits only
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- *
- *
- *
- *
- *
- *
- * @param  string $digits
- * @param  string $digits
- * @param  string $digits
- * @return int
  */
  */
  */
@@ -23,16 +11,6 @@ if (! function_exists('digits_only')) {
 
 
     function digits_only($digits)
-    function digits_only($digits)
-    function digits_only($digits)
-    function digits_only($digits)
-    function digits_only($digits)
-    {
-    {
-    {
-    {
-    {
-    {
     {
         return preg_replace("/[^0-9]+/", "", $digits);
     }
@@ -232,8 +210,6 @@ if (! function_exists('dollars')) {
  * @return int current month
  */
 if (! function_exists('current_month')) {
-if (! function_exists('current_month')) {
-if (! function_exists('current_month')) {
 
     function current_month(): string
     {
@@ -303,69 +279,6 @@ if (! function_exists('leap_year')) {
  * @return array
  */
 if (! function_exists('months')) {
-    function months(string $type = 'digits', $range = 12): array
-    {
-        $months = [];
-        $start = 1;
-        $end = 12;
-
-        if (filled($range)) {
-            if (is_numeric($range)) {
-                if ($range <= 0 && $range > 12) {
-                    $end = 12;
-                } else {
-                    $end = safe_integer($range);
-                }
-            }
-
-            if (is_array($range) && count($range) == 2) {
-                foreach ($range as $index => $value) {
-                    if (!is_numeric($value)) {
-                        $start = 1;
-                        $end = 12;
-                        break;
-                    } else {
-                        if ($index == 0) {
-                            $start = safe_integer($value);
-                        } else {
-                            $end = safe_integer($value);
-                        }
-                    }
-                }
-            }
-        }
-
-        $type = strtolower($type);
-
-        switch ($type) {
-            case 'short':
-                for ($m = $start; $m <= $end; $m++) {
-                    $months[] = date('M', mktime(0, 0, 0, $m, 1));
-                }
-                break;
-            case 'full':
-                for ($m = $start; $m <= $end; $m++) {
-                    $months[] = date('F', mktime(0, 0, 0, $m, 1));
-                }
-                break;
-            case 'digit':
-                for ($m = $start; $m <= $end; $m++) {
-                    $months[] = date('n', mktime(0, 0, 0, $m, 1));
-                }
-                break;
-            case 'digits':
-                for ($m = $start; $m <= $end; $m++) {
-                    $months[] = date('m', mktime(0, 0, 0, $m, 1));
-                }
-                break;
-            default:
-                for ($m = $start; $m <= $end; $m++) {
-                    $months[] = date('m', mktime(0, 0, 0, $m, 1));
-                }
-        }
-
-        return $months;
-    }
 }
 
 /**
