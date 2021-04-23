@@ -372,20 +372,6 @@ if (! function_exists('currency')) {
  * @param  string $code
  * @return string
  */
-if (! function_exists('currency_format')) {
-    function currency_format(int $cents, string $code = 'USD'): ?string
-    {
-        $currency = currency($code, false);
-        $amount =  safe_integer($cents);
-
-        if ($currency) {
-            $amount = $currency->symbol . number_format(dollars($cents), $currency->decimal_digits) . ' ' . $currency->code;
-        }
-
-        return ((string) $amount);
-    }
-}
-
 
 /**
  * Returns all states from database or cache
