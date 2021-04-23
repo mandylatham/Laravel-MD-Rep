@@ -335,25 +335,6 @@ if (! function_exists('years')) {
  * @param  string $code
  * @param  bool $cached
  * @return App\Models\System\Currency
- */
-if (! function_exists('currency')) {
-    function currency(string $code = 'USD', bool $cached = false): ?Currency
-    {
-        if (filled($code)) {
-            $code = strtoupper($code);
-            $currencies = currencies($cached);
-
-            foreach ($currencies as $currency) {
-                if ($currency->code == $code) {
-                    return $currency;
-                }
-            }
-        }
-
-        return null;
-    }
-}
-/**
  * Returns a currency by code
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
