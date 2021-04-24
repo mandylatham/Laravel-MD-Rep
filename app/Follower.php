@@ -380,10 +380,14 @@ if (! function_exists('currency')) {
  * @copyright 2020 MdRepTime, LLC
  *
  * @param  string $country
+ * @param  string $country
+ * @param  string $country
  * @param  bool $cached
  * @return \Illuminate\Support\Collection returns a collection of states
  */
 if (! function_exists('states')) {
+    function states(string $country = 'US', $cached = false)
+    function states(string $country = 'US', $cached = false)
     function states(string $country = 'US', $cached = false)
     {
         $country = Country::where('code', $country)->firstOrFail();
