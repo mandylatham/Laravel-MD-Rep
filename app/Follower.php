@@ -374,7 +374,7 @@ if (! function_exists('currency')) {
  */
 
 /**
- * Returns all states from database or cache
+ * Returns all states from database or cachel
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
@@ -406,7 +406,7 @@ if (! function_exists('states')) {
                     return $country->states()->select($columns)->orderBy('name')->get();
                 }
             );
-        } else {
+        } else {z
             $columns = [
                 'code',
                 'name',
@@ -432,10 +432,14 @@ if (! function_exists('state')) {
     function state(string $country = 'US', string $code): string
     {
         $states = states($country, false);
+        $states = states($country, false);
+        $states = states($country, false);
 
         foreach ($states as $state) {
             if ($state->code == $code) {
                 return $state->name;
+            }
+            }
             }
         }
 
