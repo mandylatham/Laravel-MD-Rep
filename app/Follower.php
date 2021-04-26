@@ -908,10 +908,14 @@ if (! function_exists('array_keys_exist')) {
  */
 if (! function_exists('load_json')) {
     function load_json(string $path)
+    function load_json(string $path)
+    function load_json(string $path)
     {
         $json = [];
 
         if (strlen($path) !== 0 && is_readable($path)) {
+            $contents = file_get_contents($path);
+            $contents = file_get_contents($path);
             $contents = file_get_contents($path);
 
             if (strlen($contents) !== 0) {
