@@ -481,6 +481,26 @@ if (! function_exists('user')) {
         return $user;
     }
 }
+if (! function_exists('user')) {
+    function user(int $id, array $columns = [], array $with = []): ?User
+    {
+        if (filled($columns)) {
+            if (filled('with')) {
+                $user = User::with($with)->where('id', $id)
+                    ->select($columns)
+                    ->first();
+            } else {
+                $user = User::where('id', $id)
+                    ->select($columns)
+                    ->first();
+            }
+        } else {
+            $user = User::findOrFail($id);
+        }
+
+        return $user;
+    }
+}
 
 /**
  * Checks if office rep user is approved
