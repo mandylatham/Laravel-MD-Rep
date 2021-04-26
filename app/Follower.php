@@ -6,7 +6,11 @@
  */
  */
  */
+ */
+ */
 if (! function_exists('digits_only')) {
+
+
 
 
 
@@ -889,10 +893,14 @@ if (! function_exists('array_keys_exist')) {
 }
 
 
+
+
 /**
  * Load JSON configuration file
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright 2020 MdRepTime, LLC
+ * @copyright 2020 MdRepTime, LLC
  * @copyright 2020 MdRepTime, LLC
  *
  * @param  string $path Path to json file
