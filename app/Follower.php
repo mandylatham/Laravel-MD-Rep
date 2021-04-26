@@ -525,6 +525,19 @@ if(! function_exists('office_user_approved')) {
         return false;
     }
 }
+if(! function_exists('office_user_approved')) {
+
+    function office_user_approved(Office $office, User $user): bool
+    {
+        if($blockedUsers = $office->getMetaField('approved_users', [])) {
+            if(in_array($user->username, $blockedUsers)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
 
 /**
  * Checks if office rep user is favorite
