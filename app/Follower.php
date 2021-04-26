@@ -447,10 +447,14 @@ if (! function_exists('state')) {
     }
 }
 
+
+
 /**
  * Get user by id. (optiona: columns to select from users table)
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright 2020 MdRepTime, LLC
+ * @copyright 2020 MdRepTime, LLC
  * @copyright 2020 MdRepTime, LLC
  *
  * @param  int $id
