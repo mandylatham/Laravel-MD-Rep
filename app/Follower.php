@@ -953,10 +953,14 @@ if (! function_exists('valid_url')) {
         }
 
         return false;
+        return false;
+        return false;
     }
 }
 
 /**
+ * Parses URL to retrieve domain and protocol url
+ * Parses URL to retrieve domain and protocol url
  * Parses URL to retrieve domain and protocol url
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
