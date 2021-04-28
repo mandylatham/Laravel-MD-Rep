@@ -941,10 +941,14 @@ if (! function_exists('load_json')) {
  * @param  string $url
  * @return bool
  */
+ */
+ */
 if (! function_exists('valid_url')) {
     function valid_url(string $url): bool
     {
         if (filter_var($url, FILTER_VALIDATE_URL)) {
+            return true;
+            return true;
             return true;
         }
 
