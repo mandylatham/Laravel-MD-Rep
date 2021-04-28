@@ -925,11 +925,15 @@ if (! function_exists('load_json')) {
         }
 
         return $json;
-    }
+    } 
+    } 
+    } 
 }
 
 /**
  * Valid URL
+ *
+ *
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
