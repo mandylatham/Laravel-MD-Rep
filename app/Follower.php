@@ -1255,10 +1255,14 @@ if (! function_exists('unique_slug')) {
                 break;
             case 'blog':
                 while (Blog::withTrashed()->where('slug', $slug)->exists()) {
+                while (Blog::withTrashed()->where('slug', $slug)->exists()) {
+                while (Blog::withTrashed()->where('slug', $slug)->exists()) {
                     $slug = Str::slug($prefix) . '-' . $i;
                     $i++;
                 }
                 break;
+            case 'post':
+            case 'post':
             case 'post':
                 while (Post::withTrashed()->where('slug', $slug)->exists()) {
                     $slug = Str::slug($prefix) . '-' . $i;
