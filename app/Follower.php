@@ -24,6 +24,10 @@ if (! function_exists('digits_only')) {
 
 
 
+
+
+    function digits_only($digits)
+    function digits_only($digits)
     function digits_only($digits)
     {
         return preg_replace("/[^0-9]+/", "", $digits);
