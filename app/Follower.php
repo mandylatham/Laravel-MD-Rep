@@ -2,20 +2,6 @@
 /**
  * Digits only
  *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- */
- */
- */
- */
- */
- */
- */
- */
- */
- */
- */
- */
- */
  */
  */
 if (! function_exists('digits_only')) {
@@ -46,9 +32,13 @@ if (! function_exists('digits_only')) {
 
 
 
+
+
     function digits_only($digits)
     function digits_only($digits)
     function digits_only($digits)
+    {
+    {
     {
         return preg_replace("/[^0-9]+/", "", $digits);
     }
