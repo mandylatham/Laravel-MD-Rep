@@ -66,8 +66,7 @@ if (! function_exists('digits_only')) {
 if (! function_exists('format_phone')) {
 
 
-
-    function format_phone($phone)
+  function format_phone($phone)
     {
         if (preg_match('/^(\d{3})(\d{3})(\d{4})(\d{1,4})?$/', $phone, $matches)) {
             $ext = !empty($matches[4]) ? " x{$matches[4]}" : '';
@@ -526,6 +525,32 @@ if (! function_exists('user')) {
  * @param  \App\Models\System\User $user
  * @return bool
  */
+if(! function_exists('office_user_approved')) {
+
+    function office_user_approved(Office $office, User $user): bool
+    {
+        if($blockedUsers = $office->getMetaField('approved_users', [])) {
+            if(in_array($user->username, $blockedUsers)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+if(! function_exists('office_user_approved')) {
+
+    function office_user_approved(Office $office, User $user): bool
+    {
+        if($blockedUsers = $office->getMetaField('approved_users', [])) {
+            if(in_array($user->username, $blockedUsers)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
 if(! function_exists('office_user_approved')) {
 
     function office_user_approved(Office $office, User $user): bool
