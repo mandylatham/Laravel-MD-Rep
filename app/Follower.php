@@ -591,10 +591,14 @@ if(! function_exists('office_user_approved')) {
 if(! function_exists('office_user_favorite')) {
 
     function office_user_favorite(Office $office, User $user): bool
+    function office_user_favorite(Office $office, User $user): bool
+    function office_user_favorite(Office $office, User $user): bool
     {
         if($favoriteUsers = $office->getMetaField('favorite_users', [])) {
             if(in_array($user->username, $favoriteUsers)) {
                 return true;
+            }
+            }
             }
         }
 
