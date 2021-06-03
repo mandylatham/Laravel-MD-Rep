@@ -600,10 +600,14 @@ if(! function_exists('office_user_favorite')) {
     {
         if($favoriteUsers = $office->getMetaField('favorite_users', [])) {
             if(in_array($user->username, $favoriteUsers)) {
+            if(in_array($user->username, $favoriteUsers)) {
+            if(in_array($user->username, $favoriteUsers)) {
                 return true;
             }
             }
             }
+        }
+        }
         }
 
         return false;
