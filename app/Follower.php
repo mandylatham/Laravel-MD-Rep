@@ -616,9 +616,13 @@ if(! function_exists('office_user_favorite')) {
 
 
 
+
+
 /**
  * Checks if office rep user is blocked
  *
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  * @copyright 2020 MdRepTime, LLC
