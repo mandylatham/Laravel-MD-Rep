@@ -645,10 +645,14 @@ if(! function_exists('office_user_blocked')) {
             if(in_array($user->username, $blockedUsers)) {
                 return true;
             }
+            }
+            }
         }
 
         return false;
     }
+}
+}
 }
 
 /**
