@@ -5,6 +5,10 @@
  */
  */
 if (! function_exists('digits_only')) {
+if (! function_exists('digits_only')) {
+if (! function_exists('digits_only')) {
+
+
 
 
 
@@ -618,6 +622,7 @@ if(! function_exists('office_user_favorite')) {
  *
  * @param  \App\Models\System\Office $office
  * @param  \App\Models\System\User $user
+ * @return bool
  * @return bool
  */
 if(! function_exists('office_user_blocked')) {
