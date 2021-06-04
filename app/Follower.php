@@ -852,26 +852,6 @@ if (! function_exists('system_media_url')) {
 /**
  * Adds menu class 'active' based on the current url
  *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @param  string $path
- * @return string
- */
-if (! function_exists('menu_link_active')) {
-    function menu_link_active($path)
-    {
-        $path = explode('.', $path);
-        $segment = 1;
-        foreach ($path as $p) {
-            if ((request()->segment($segment) == $p) == false) {
-                return '';
-            }
-            $segment++;
-        }
-        return ' active';
-    }
-}
 
 /**
  * Convert byte to megabyte
