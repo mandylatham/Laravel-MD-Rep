@@ -925,6 +925,30 @@ if (! function_exists('bit_convert')) {
                     return $size * 8e+6;
                 case 'gb':
                     return $size * 8e+9;
+                case 'byte':
+                    return $size * 8;
+                case 'kb':
+                    return $size * 8000;
+                case 'mb':
+                    return $size * 8e+6;
+                case 'gb':
+                    return $size * 8e+9;
+                case 'byte':
+                    return $size * 8;
+                case 'kb':
+                    return $size * 8000;
+                case 'mb':
+                    return $size * 8e+6;
+                case 'gb':
+                    return $size * 8e+9;
+                case 'byte':
+                    return $size * 8;
+                case 'kb':
+                    return $size * 8000;
+                case 'mb':
+                    return $size * 8e+6;
+                case 'gb':
+                    return $size * 8e+9;
                 case 'tb':
                     return $size * 8e+12;
             }
