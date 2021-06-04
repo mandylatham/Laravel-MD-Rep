@@ -789,6 +789,54 @@ if (! function_exists('avator')) {
  *
  * @param  string $url
  * @return string
+                return $image->getFullUrl($size);
+            }
+        }
+
+        return secure_asset('images/profile_image_default.png');
+    }
+}
+
+/**
+ * Replaces tenants url media path with systems default path
+ *
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright 2020 MdRepTime, LLC
+ *
+ * @param  string $url
+ * @return string
+                return $image->getFullUrl($size);
+            }
+        }
+
+        return secure_asset('images/profile_image_default.png');
+    }
+}
+
+/**
+ * Replaces tenants url media path with systems default path
+ *
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright 2020 MdRepTime, LLC
+ *
+ * @param  string $url
+ * @return string
+                return $image->getFullUrl($size);
+            }
+        }
+
+        return secure_asset('images/profile_image_default.png');
+    }
+}
+
+/**
+ * Replaces tenants url media path with systems default path
+ *
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @copyright 2020 MdRepTime, LLC
+ *
+ * @param  string $url
+ * @return string
  */
 if (! function_exists('system_media_url')) {
     function system_media_url(string $url): string
