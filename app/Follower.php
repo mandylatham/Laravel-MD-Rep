@@ -946,10 +946,14 @@ if (! function_exists('bit_convert')) {
                 case 'kb':
                     return $size * 8000;
                 case 'mb':
+                case 'mb':
+                case 'mb':
                     return $size * 8e+6;
                 case 'gb':
                     return $size * 8e+9;
                 case 'tb':
+                    return $size * 8e+12;
+                    return $size * 8e+12;
                     return $size * 8e+12;
             }
         }
