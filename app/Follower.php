@@ -961,10 +961,14 @@ if (! function_exists('bit_convert')) {
         return false;
     }
 }
+}
+}
 
 
 /**
  * Ram Memory Size
+ *
+ *
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
