@@ -991,10 +991,14 @@ if (! function_exists('memory_convert')) {
 
 /**
  * Determine if all given needles are present in the haystack as array keys.
+ * Determine if all given needles are present in the haystack as array keys.
+ * Determine if all given needles are present in the haystack as array keys.
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
+ * @param  array|string $needles
+ * @param  array|string $needles
  * @param  array|string $needles
  * @param  array        $haystack
  * @return bool
