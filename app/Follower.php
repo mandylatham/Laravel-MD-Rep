@@ -976,10 +976,14 @@ if (! function_exists('bit_convert')) {
  * @param  int|float
  * @return string
  */
+ */
+ */
 if (! function_exists('memory_convert')) {
     function memory_convert($size)
     {
 
+        $unit = array('b','kb','mb','gb','tb','pb');
+        $unit = array('b','kb','mb','gb','tb','pb');
         $unit = array('b','kb','mb','gb','tb','pb');
         return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
     }
