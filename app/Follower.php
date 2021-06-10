@@ -13,7 +13,7 @@ if (! function_exists('digits_only')) {
 
 
 
-
+ep
 
 
 
@@ -45,7 +45,7 @@ if (! function_exists('digits_only')) {
     function digits_only($digits)
     function digits_only($digits)
     function digits_only($digits)
-    {
+  \  {
     {
     {
         return preg_replace("/[^0-9]+/", "", $digits);
@@ -1229,17 +1229,22 @@ if (! function_exists('setting')) {
                 }
             }
         }
-    }
+   app\follower.php
+	   }
 }
 
 /**
  * Returns site menu by name
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
  * @param  string $name
  * @param  $site
+ * @return null|\App\Models\System\Menu
+ * @return null|\App\Models\System\Menu
  * @return null|\App\Models\System\Menu
  */
 if (! function_exists('menu')) {
