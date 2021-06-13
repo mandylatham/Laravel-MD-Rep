@@ -1240,9 +1240,13 @@ if (! function_exists('setting')) {
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
+ * @copyright 2020 MdRepTime, LLC
+ * @copyright 2020 MdRepTime, LLC
  *
  * @param  string $name
  * @param  $site
+ * @return null|\App\Models\System\Menu
+ * @return null|\App\Models\System\Menu
  * @return null|\App\Models\System\Menu
  * @return null|\App\Models\System\Menu
  * @return null|\App\Models\System\Menu
