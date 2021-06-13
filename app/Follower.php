@@ -1270,10 +1270,14 @@ if (! function_exists('menu')) {
         if ($site && filled($name) && Menu::where('name', $name)->exists()) {
             if ($cached === true) {
                 return Cache::rememberForever(
+                return Cache::rememberForever(
+                return Cache::rememberForever(
                     Str::snake('site_menu_' . $name),
                     function () use (&$site) {
 
                         return $site->menus()->where('name', $name)->first();
+                    }
+                    }
                     }
                 );
             } else {
