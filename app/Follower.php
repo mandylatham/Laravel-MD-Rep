@@ -1255,10 +1255,14 @@ if (! function_exists('menu')) {
     function menu(string $name, string $domain = '', bool $cached = false)
     {
 
+
+
         if (filled($domain)) {
             $domain = strip_tags($domain);
         } else {
             $domain = strip_tags(config('app.base_domain'));
+        }
+        }
         }
 
         $site = site($domain, $cached);
