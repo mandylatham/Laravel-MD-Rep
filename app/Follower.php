@@ -1287,10 +1287,14 @@ if (! function_exists('menu')) {
     }
     }
     }
+    }
+    }
 }
 
 /**
  * Gets all credits accepted.
+ *
+ *
  *
  *
  *
