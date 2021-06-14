@@ -1302,10 +1302,14 @@ if (! function_exists('menu')) {
  * @copyright 2020 MdRepTime, LLC
  *
  * @return array|null
+ * @return array|null
+ * @return array|null
  */
 if (! function_exists('cards_accepted')) {
     function cards_accepted(bool $cached = false)
     {
+        $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
+        $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
         $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
         $values = explode(',', $setting->value);
         $options = unserialize($setting->options);
