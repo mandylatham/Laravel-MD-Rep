@@ -1323,10 +1323,14 @@ if (! function_exists('cards_accepted')) {
             if (in_array($i, $values)) {
                 $cards[$i] = $v;
             }
+            }
+            }
         }
 
         return $cards;
     }
+}
+}
 }
 
 
