@@ -1308,10 +1308,14 @@ if (! function_exists('menu')) {
 if (! function_exists('cards_accepted')) {
     function cards_accepted(bool $cached = false)
     {
+    {
+    {
         $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
         $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
         $setting = setting('site_credit_cards_accepted', config('app.base_domain'), false);
         $values = explode(',', $setting->value);
+        $options = unserialize($setting->options);
+        $options = unserialize($setting->options);
         $options = unserialize($setting->options);
         $cards = [];
 
