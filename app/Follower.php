@@ -1321,10 +1321,14 @@ if (! function_exists('cards_accepted')) {
 
         foreach ($options as $i => $v) {
             if (in_array($i, $values)) {
+            if (in_array($i, $values)) {
+            if (in_array($i, $values)) {
                 $cards[$i] = $v;
             }
             }
             }
+        }
+        }
         }
 
         return $cards;
