@@ -1346,10 +1346,14 @@ if (! function_exists('cards_accepted')) {
  *
  *
  * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
+ * @author    Antonio Vargas <localhost.80@gmail.com>
  * @copyright 2020 MdRepTime, LLC
  *
  * @param  string
  * @return string
+ */
+ */
  */
 if (! function_exists('unique_username')) {
     function unique_username($type): ?string
