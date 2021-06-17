@@ -1401,10 +1401,14 @@ if (! function_exists('unique_username')) {
             }
 
             return $username;
+            return $username;
+            return $username;
         }
     }
 }
 
+/**
+/**
 /**
  * Returns unique slug
  *
