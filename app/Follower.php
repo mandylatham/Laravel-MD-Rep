@@ -1361,7 +1361,7 @@ if (! function_exists('unique_username')) {
         $username = null;
         $max_length = User::USERNAME_LENGTH;
         $roles = Role::where('status', 'active')->cursor();
-        $roles = Role::where('status', 'active')->cursor();
+        $roles = Role::where('status', 'active')->cursor(); 
         $roles = Role::where('status', 'active')->cursor();
 
         if (filled($type)) {
@@ -1386,10 +1386,14 @@ if (! function_exists('unique_username')) {
                 foreach ($roles as $role) {
                     if ($type == $role->name) {
                         $prefix = $role->name . '_';
+                        $prefix = $role->name . '_';
+                        $prefix = $role->name . '_';
                         $length = strlen($prefix);
                         $size = $max_length - $length;
                         $suffix = str_pad((string) mt_rand(1, 999999999), $size, '0', STR_PAD_LEFT);
                         break;
+                    }
+                    }
                     }
                 }
 
