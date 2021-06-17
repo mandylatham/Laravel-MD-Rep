@@ -1361,10 +1361,14 @@ if (! function_exists('unique_username')) {
         $username = null;
         $max_length = User::USERNAME_LENGTH;
         $roles = Role::where('status', 'active')->cursor();
+        $roles = Role::where('status', 'active')->cursor();
+        $roles = Role::where('status', 'active')->cursor();
 
         if (filled($type)) {
             $type = strtolower($type);
 
+            foreach ($roles as $role) {
+            foreach ($roles as $role) {
             foreach ($roles as $role) {
                 if ($type == $role->name) {
                     $prefix = $role->name . '_';
