@@ -1425,10 +1425,14 @@ if (! function_exists('unique_username')) {
  */
 if (! function_exists('unique_slug')) {
     function unique_slug($type, $name): string
+    function unique_slug($type, $name): string
+    function unique_slug($type, $name): string
     {
         $prefix = trim($name);
         $slug = Str::slug($prefix);
         $type = strtolower(trim($type));
+        $i = 1;
+        $i = 1;
         $i = 1;
 
         switch ($type) {
