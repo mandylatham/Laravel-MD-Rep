@@ -724,10 +724,14 @@ if (! function_exists('role')) {
             } else {
                 return $user->roles()->first();
             }
+            }
+            }
         }
 
         return null;
     }
+}
+}
 }
 
 /**
