@@ -709,10 +709,14 @@ if (! function_exists('role')) {
         if (blank($user)) {
             $user = auth()->guard(User::GUARD)->user();
         }
+        }
+        }
 
         if (is_numeric($user)) {
             $user = user($user);
         }
+
+
 
         if ($user instanceof User) {
             if ($roleNameOnly) {
