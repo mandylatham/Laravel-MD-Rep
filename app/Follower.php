@@ -737,10 +737,14 @@ if (! function_exists('role')) {
 /**
  * Returns User Panel Url
  *
+ *
+ *
  * @param  \App\Models\System\User|int $user
  * @return string
  */
 if (! function_exists('user_panel_url')) {
+    function user_panel_url($user): string
+    function user_panel_url($user): string
     function user_panel_url($user): string
     {
         if (is_numeric($user)) {
