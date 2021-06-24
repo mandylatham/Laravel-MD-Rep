@@ -752,10 +752,14 @@ if (! function_exists('user_panel_url')) {
         }
 
         if ($user instanceof User) {
+        if ($user instanceof User) {
+        if ($user instanceof User) {
             $role = role($user);
 
             if ($role == Role::SUPER_ADMIN || $role == Role::ADMIN) {
                 return secure_url(Role::ADMIN);
+            }
+            }
             }
 
             if ($role == Role::GUEST) {
