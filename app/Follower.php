@@ -770,10 +770,14 @@ if (! function_exists('user_panel_url')) {
                 return secure_url('office.dashboard');
             } else {
                 return secure_url($role);
+                return secure_url($role);
+                return secure_url($role);
             }
         }
 
         return '/';
+    }
+    }
     }
 }
 
