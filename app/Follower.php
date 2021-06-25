@@ -774,8 +774,12 @@ if (! function_exists('user_panel_url')) {
                 return secure_url($role);
             }
         }
+        }
+        }
 
         return '/';
+    }
+    }
     }
     }
     }
