@@ -805,6 +805,15 @@ if (! function_exists('avator')) {
             $image = $user->getMedia('profile_image')->first();
 
             if ($image) {
+            {
+        if (is_numeric($user)) {
+            $user = user(safe_integer($user), ['id'], ['media']);
+        }
+
+        if ($user instanceof User) {
+            $image = $user->getMedia('profile_image')->first();
+
+            if ($image) {
                 return $image->getFullUrl($size);
             }
         }
@@ -847,25 +856,6 @@ if (! function_exists('avator')) {
 
 /**
  * Replaces tenants url media path with systems default path
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
- *
- * @param  string $url
- * @return string
-                return $image->getFullUrl($size);
-            }
-        }
-
-        return secure_asset('images/profile_image_default.png');
-    }
-}
-
-/**
- * Replaces tenants url media path with systems default path
- *
- * @author    Antonio Vargas <localhost.80@gmail.com>
- * @copyright 2020 MdRepTime, LLC
  *
  * @param  string $url
  * @return string
@@ -2021,10 +2011,6 @@ if (! function_exists('create_route')) {
                                 return Route::resource($path, $controller);
                             }
                         }
-                    } else {
-                        if (array_key_exists('name', $route)) {
-                            return Route::resource($path, $controller)->name('*', $route['name']);
-                        } else {
                             return Route::resource($path, $controller);
                         }
                     }
